@@ -29,7 +29,6 @@ router.get('/tasks', auth, async (req, res) => {
     }
 })
 
-
 /** Allow only the login user that has a task to view his taks onlyu */
 router.get('/tasks/:id', auth, async (req, res) => {
     const _id = req.params.id

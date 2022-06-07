@@ -22,7 +22,7 @@ router.post('/users', async (req, res) => {
 router.post('/users/login', async (req, res) => {
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password)
-        const token  = await user.generateAuthToken()
+        const token  = await user.generateAuthToken();
         const userObject = await user.getUserProfile();
         res.send({
             user: userObject,
